@@ -184,28 +184,17 @@ body {
   color: var(--text-primary);
 }
 
-.tax-saving-recommendations {
-  background-color: var(--bg-secondary);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-}
-
-.recommendation-item {
-  padding: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.recommendation-item h3 {
-  margin: 0 0 0.5rem 0;
-  color: var(--accent-color);
-}
-
-.recommendation-item p {
-  margin: 0;
-  color: var(--text-secondary);
+.tax-calculator,
+.tax-saving-recommendations,
+.tax-breakdown,
+.tax-item,
+.regime-options,
+.regime-card,
+.calculator-header,
+.income-input-wrapper,
+.income-indicator,
+.tax-calculator.empty-state {
+  display: none !important;
 }
 
 .form-info h3 {
