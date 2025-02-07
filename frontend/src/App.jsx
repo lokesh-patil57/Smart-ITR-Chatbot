@@ -9,6 +9,11 @@ import { AppProvider } from './context/AppContext';
 import './styles/main.css';
 import './styles/theme.css';
 import Sidebar from './components/Sidebar';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import SignIn from './components/auth/SignIn';
+import SignUp from './components/auth/SignUp';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 // Create a wrapped component to use the theme context
 function AppContent() {
@@ -51,11 +56,27 @@ function AppContent() {
 // Main App component
 function App() {
   return (
-    <ThemeProvider>
-      <AppProvider>
-        <AppContent />
-      </AppProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <AppProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Navigate to="/signin" />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route
+                path="/tax-assistant"
+                element={
+                  <ProtectedRoute>
+                    <AppContent />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </Router>
+        </AppProvider>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

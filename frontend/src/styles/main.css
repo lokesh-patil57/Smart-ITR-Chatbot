@@ -18,10 +18,34 @@
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
   --text-primary: #ffffff;
-  --text-secondary: #cccccc;
+  --text-secondary: #e0e0e0;
   --border-color: #404040;
   --header-bg: #1a1a1a;
   --header-text: #ffffff;
+  --accent-color: #4CAF50;
+  --primary-color: #ffffff;
+  --secondary-color: #81C784;
+}
+
+/* Dark mode overrides for tax regime section */
+[data-theme='dark'] .regime-card {
+  background: var(--bg-secondary);
+  color: #ffffff;
+}
+
+[data-theme='dark'] .regime-card h4 {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .regime-card p,
+[data-theme='dark'] .regime-card ul li,
+[data-theme='dark'] .help-text,
+[data-theme='dark'] .subtitle {
+  color: var(--text-secondary);
+}
+
+[data-theme='dark'] .calculator-header h1 {
+  color: #ffffff;
 }
 
 body {
@@ -184,17 +208,28 @@ body {
   color: var(--text-primary);
 }
 
-.tax-calculator,
-.tax-saving-recommendations,
-.tax-breakdown,
-.tax-item,
-.regime-options,
-.regime-card,
-.calculator-header,
-.income-input-wrapper,
-.income-indicator,
-.tax-calculator.empty-state {
-  display: none !important;
+.tax-saving-recommendations {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.recommendation-item {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.recommendation-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent-color);
+}
+
+.recommendation-item p {
+  margin: 0;
+  color: var(--text-secondary);
 }
 
 .form-info h3 {
@@ -481,7 +516,7 @@ body {
 }
 
 .calculator-header h1 {
-  color: var(--primary-color);
+  color: #5dacff;
   margin-bottom: 0.5rem;
 }
 
@@ -564,7 +599,7 @@ body {
 }
 
 .help-text {
-  color: var(--text-secondary);
+  color: #0c0d0d;
   font-size: 0.9rem;
 }
 

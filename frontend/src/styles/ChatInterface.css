@@ -24,8 +24,8 @@
 
 .clear-button {
     background: transparent;
-    border: 1px solid var(--header-text);
-    color: var(--header-text);
+    border: 1px solid #0595ff;
+    color: #0385ff;
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
     border-radius: 4px;
@@ -205,8 +205,8 @@
 
 .history-button {
     background: transparent;
-    border: 1px solid var(--header-text);
-    color: var(--header-text);
+    border: 1px solid #e20000;
+    color: #e20000;
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
     border-radius: 4px;
