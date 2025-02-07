@@ -6,7 +6,6 @@ A  hiii smart chatbot application that helps users determine the appropriate ITR
 ## Features
 
 - 🤖 Interactive chat interface for tax-related queries
-- 📊 Real-time tax calculations
 - 📝 ITR form recommendations based on income sources
 - 💰 Tax saving suggestions under various sections
 - 🌓 Dark/Light theme toggle
@@ -65,7 +64,7 @@ Add the following to your `.env` file:
 VITE_API_URL=http://localhost:5000
 
 Start the frontend development server
-npm start
+npm start/ npm run dev
 
 
 The application will open automatically in your default browser at http://localhost:3000
