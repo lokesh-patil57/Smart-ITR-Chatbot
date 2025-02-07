@@ -1,0 +1,208 @@
+:root {
+    /* Light theme variables with Navy Blue colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f8fa;
+    --text-primary: #1a2942;
+    --text-secondary: #445670;
+    --accent-color: #1e3a8a;    /* Navy Blue */
+    --border-color: #e2e8f0;
+    --chat-bubble-user: #e8f4ff; /* Light Blue */
+    --chat-bubble-bot: #f0f7ff;  /* Lighter Blue */
+    --header-bg: #1e3a8a;        /* Navy Blue */
+    --header-text: #ffffff;
+    --button-hover: #2563eb;     /* Brighter Blue */
+    --input-bg: #ffffff;
+    --shadow-color: rgba(30, 58, 138, 0.2); /* Navy Blue shadow */
+}
+
+.dark-theme {
+    /* Dark theme variables with Navy Blue colors */
+    --bg-primary: #0f172a;      /* Dark Navy */
+    --bg-secondary: #1e293b;    /* Darker Navy */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --accent-color: #2563eb;    /* Bright Blue */
+    --border-color: #334155;    /* Dark Navy Border */
+    --chat-bubble-user: #1e3a8a; /* Navy Blue */
+    --chat-bubble-bot: #1e293b;  /* Darker Navy */
+    --header-bg: #1e3a8a;        /* Navy Blue */
+    --header-text: #ffffff;
+    --button-hover: #3b82f6;     /* Light Blue */
+    --input-bg: #1e293b;
+    --shadow-color: rgba(30, 58, 138, 0.1);
+}
+
+/* Global styles */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header styles */
+.header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Chat container styles */
+.chat-container {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Message bubble styles */
+.message-bubble.user {
+    background-color: var(--chat-bubble-user);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.message-bubble.bot {
+    background-color: var(--chat-bubble-bot);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* Input area styles */
+.chat-input {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 20px;
+    padding: 0.8rem 1.2rem;
+}
+
+.chat-input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--shadow-color);
+}
+
+/* Button styles */
+button {
+    background-color: var(--accent-color);
+    color: var(--header-text);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Theme toggle button specific styles */
+.theme-toggle-btn {
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Side panel styles */
+.side-panel {
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    padding: 1rem;
+}
+
+/* Form and calculator styles */
+.form-container, .calculator-container {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Input fields */
+input, select, textarea {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 4px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--shadow-color);
+    outline: none;
+}
+
+/* Card styles */
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--button-hover);
+    text-decoration: underline;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    border: 3px solid var(--bg-secondary);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--button-hover);
+} 
