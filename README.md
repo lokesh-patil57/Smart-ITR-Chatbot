@@ -1,6 +1,6 @@
 # Tax Assistant Chatbot
  
-A  hii smart chatbot application that helps users determine the appropriate ITR form and provides tax saving recommendations. The application features a user-friendly interface with dark/light theme support, real-time tax calculations, and downloadable ITR forms.
+A  hiii smart chatbot application that helps users determine the appropriate ITR form and provides tax saving recommendations. The application features a user-friendly interface with dark/light theme support, real-time tax calculations, and downloadable ITR forms.
 
 
 ## Features
