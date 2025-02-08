@@ -41,6 +41,8 @@ cd Smart-ITR-Chatbot
 2. Set up the backend:
 ```
 cd backend
+npm install bcryptjs cors express-validator
+npm install mongoose express dotenv jsonwebtoken
 npm install
 ```
 
@@ -172,7 +174,7 @@ npm install
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 <<<<<<< HEAD
-Made with ❤️ by [Code_Hackers](https://github.com/lucky577)
+Made with ❤️ by [Code_Hackers](https://github.com/bhaveshburad729/Smart-ITR-Chatbot.git)
 =======
 ## Contact
 
