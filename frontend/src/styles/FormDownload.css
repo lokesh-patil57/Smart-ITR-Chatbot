@@ -74,6 +74,44 @@
     font-size: 1.1em;
 }
 
+.tax-guide-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.tax-guide-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tax-guide-btn:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.tax-guide-btn:active {
+    transform: translateY(0);
+}
+
+/* Add info icon */
+.tax-guide-btn::before {
+    content: "💡";
+    font-size: 1.2em;
+}
+
 @media (max-width: 768px) {
     .forms-grid {
         grid-template-columns: 1fr;

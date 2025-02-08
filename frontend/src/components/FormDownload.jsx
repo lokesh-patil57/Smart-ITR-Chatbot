@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/FormDownload.css';
 
 const forms = [
@@ -34,6 +35,7 @@ const forms = [
 
 function FormDownload() {
     const [downloading, setDownloading] = useState({});
+    const navigate = useNavigate();
 
     const handleDownload = (form) => {
         setDownloading(prev => ({ ...prev, [form.id]: true }));
@@ -75,6 +77,16 @@ function FormDownload() {
                         </button>
                     </div>
                 ))}
+            </div>
+            
+            {/* Tax Saving Guide Button */}
+            <div className="tax-guide-section">
+                <button 
+                    className="tax-guide-btn"
+                    onClick={() => navigate('/tax-saving-guide')}
+                >
+                    View Tax Saving Guide
+                </button>
             </div>
         </div>
     );

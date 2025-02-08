@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaUser, FaChartLine, FaFileAlt, FaBell, FaCog } from 'react-icons/fa';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import '../styles/Sidebar.css';
+import { useNavigate } from 'react-router-dom';
 
 const mockTaxData = [
     { month: 'Jan', amount: 25000 },
@@ -31,6 +32,8 @@ function Sidebar({ isOpen, onClose }) {
         { id: 2, text: 'New tax saving scheme available', read: false },
         { id: 3, text: 'Your profile was updated', read: true }
     ]);
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
