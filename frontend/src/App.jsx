@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ChatInterface from './components/ChatInterface';
 import FormDownload from './components/FormDownload';
 import { ThemeToggle } from './components/ThemeToggle';
-import TaxSavingRecommendations from './components/TaxSavingRecommendations';
 import TaxCalculator from './components/TaxCalculator';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { AppProvider } from './context/AppContext';
@@ -14,6 +13,7 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import TaxSavingGuide from './components/pages/TaxSavingGuide';
 
 // Create a wrapped component to use the theme context
 function AppContent() {
@@ -42,7 +42,6 @@ function AppContent() {
         </div>
         <div className="side-panel">
           <FormDownload />
-          <TaxSavingRecommendations />
         </div>
       </main>
       <Sidebar 
@@ -71,6 +70,14 @@ function App() {
                     <AppContent />
                   </ProtectedRoute>
                 }
+              />
+              <Route 
+                path="/tax-saving-guide" 
+                element={
+                  <ProtectedRoute>
+                    <TaxSavingGuide />
+                  </ProtectedRoute>
+                } 
               />
             </Routes>
           </Router>
