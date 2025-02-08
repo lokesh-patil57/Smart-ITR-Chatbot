@@ -4,22 +4,15 @@ A modern tax assistant chatbot that helps users with ITR filing, tax calculation
 
 ## Features
 
-<<<<<<< HEAD
 - 🤖 Interactive Tax Assistant Chatbot
 - 💰 Tax Calculator with Old and New Regime Support
-- 📝 ITR Form Downloads
-- 💡 Tax Saving Recommendations
+- 📝 Complete ITR Form Suite (ITR-1 to ITR-7)
+- 💡 Comprehensive Tax Saving Guide
 - 🌓 Dark/Light Theme Support
 - 🔒 Secure Authentication System
 - 📱 Responsive Design
-=======
-- 🤖 Interactive chat interface for tax-related queries
-- 📝 ITR form recommendations based on income sources
-- 💰 Tax saving suggestions under various sections
-- 🌓 Dark/Light theme toggle
-- 📄 ITR form downloads
-- 🔒 Privacy-focused (no data storage)
->>>>>>> f4f2613e7edeac780c60a72508f2dc472ecc3452
+- 📊 Tax Analytics Dashboard
+- 📥 Chat History with PDF Export
 
 ## Prerequisites
 
@@ -33,33 +26,73 @@ Before you begin, ensure you have the following installed:
 Open Windows PowerShell and follow these steps:
 
 1. Clone the repository:
-```
-git clone https://github.com/yourusername/Smart-ITR-Chatbot.git
+```powershell
+git clone https://github.com/bhaveshburad729/Smart-ITR-Chatbot.git
 cd Smart-ITR-Chatbot
 ```
 
 2. Set up the backend:
-```
+```powershell
 cd backend
-npm install bcryptjs cors express-validator
-npm install mongoose express dotenv jsonwebtoken
+npm install bcryptjs cors express-validator mongoose express dotenv jsonwebtoken
 npm install
 ```
 
 3. Create a .env file in the backend directory:
-```
+```powershell
 New-Item .env
 ```
 
 Add the following content to .env:
-```
+```env
 MONGODB_URI=mongodb+srv://lucky577:Lok22rk+@cluster0.8effy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 JWT_SECRET=myTaxAssistant2024SecureKey!@#$
 PORT=5000
 ```
 
-4. Set up the frontend:
+### Setting up a New MongoDB Cluster
+
+If the provided cluster isn't working, follow these steps to create your own:
+
+1. Create a MongoDB Atlas account:
+```powershell
+# Visit MongoDB Atlas website
+Start-Process "https://www.mongodb.com/cloud/atlas/register"
 ```
+
+2. Set up a new cluster:
+   - Click "Build a Database"
+   - Choose "FREE" tier
+   - Select your preferred provider & region
+   - Click "Create"
+
+3. Configure database access:
+   - Go to Security → Database Access
+   - Click "Add New Database User"
+   - Create username and password
+   - Select "Read and write to any database"
+   - Click "Add User"
+
+4. Configure network access:
+   - Go to Security → Network Access
+   - Click "Add IP Address"
+   - Click "Allow Access from Anywhere" (for development)
+   - Click "Confirm"
+
+5. Get your connection string:
+   - Go to "Database" under "Deployment"
+   - Click "Connect"
+   - Choose "Drivers"
+   - Copy the connection string
+
+6. Update your .env file:
+```env
+MONGODB_URI=your_new_connection_string
+# Replace <password> with your database user password
+```
+
+4. Set up the frontend:
+```powershell
 cd ..
 cd frontend
 npm install
@@ -67,19 +100,14 @@ npm install
 
 ## Running the Application
 
-<<<<<<< HEAD
 1. Start the backend server (in one PowerShell window):
-```
+```powershell
 cd backend
 npm run dev
 ```
-=======
-Start the frontend development server
-npm start/ npm run dev
->>>>>>> f4f2613e7edeac780c60a72508f2dc472ecc3452
 
 2. Start the frontend development server (in another PowerShell window):
-```
+```powershell
 cd frontend
 npm run dev
 ```
@@ -89,25 +117,26 @@ npm run dev
 - You'll be redirected to the sign-in page
 - Create a new account or sign in with existing credentials
 
-## Project Structure
+## Available ITR Forms
 
-```
-Smart-ITR-Chatbot/
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── middleware/
-│   ├── server.js
-│   └── package.json
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── context/
-    │   ├── styles/
-    │   ├── hooks/
-    │   └── App.jsx
-    └── package.json
-```
+The application provides access to all Income Tax Return forms:
+
+- **ITR-1 (Sahaj)**: For individuals with salary/pension income
+- **ITR-2**: For individuals with capital gains/foreign income
+- **ITR-3**: For individuals with business/professional income
+- **ITR-4 (Sugam)**: For presumptive business income
+- **ITR-5**: For firms, LLPs, and AOPs
+- **ITR-6**: For companies
+- **ITR-7**: For charitable trusts, political parties
+
+## Tax Saving Guide
+
+Access comprehensive tax-saving information:
+- Section 80C deductions (₹1.5 Lakhs limit)
+- Section 80D health insurance benefits
+- NPS and pension schemes
+- Home loan tax benefits
+- Other important deductions
 
 ## Features in Detail
 
@@ -120,29 +149,27 @@ Smart-ITR-Chatbot/
 - Interactive chat interface
 - Context-aware responses
 - Tax-related query handling
-- Chat history with download option
+- Chat history with PDF download option
+- Smart form recommendations
 
 ### Tax Calculator
 - Support for both old and new tax regimes
 - Real-time calculations
 - Detailed breakdown of tax components
+- Advance tax calculation
 
-### ITR Forms
-- Easy download of various ITR forms
-- Form selection guidance
-- PDF format support
-
-### Tax Saving Recommendations
-- Personalized suggestions
-- Investment options
-- Deduction opportunities
+### Profile Management
+- User profile customization
+- Document upload capability
+- Tax filing history
+- Notification system
 
 ## Troubleshooting
 
 If you encounter any issues:
 
 1. Port already in use:
-```
+```powershell
 # Find process using port
 netstat -ano | findstr :5000
 # Kill process (replace PID with actual process ID)
@@ -150,14 +177,18 @@ taskkill /PID <PID> /F
 ```
 
 2. MongoDB connection issues:
-- Verify MongoDB is running
-- Check MongoDB connection string in .env
-- Ensure network connectivity
+```powershell
+# Check MongoDB service status
+Get-Service MongoDB
+# Start MongoDB service if stopped
+Start-Service MongoDB
+ 
+```
 
 3. Node modules issues:
-```
+```powershell
 # Remove node_modules and reinstall
-rm -r node_modules
+Remove-Item -Recurse -Force node_modules
 npm install
 ```
 
@@ -173,69 +204,4 @@ npm install
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-<<<<<<< HEAD
 Made with ❤️ by [Code_Hackers](https://github.com/bhaveshburad729/Smart-ITR-Chatbot.git)
-=======
-## Contact
-
-Your Name - your.email@example.com
-Project Link: https://github.com/yourusername/tax-assistant-chatbot
-
-## How to Use the Chatbot
-
-1. **Start a Conversation**
-   - Open the application in your browser
-   - Type "Hello" or "Hi" to begin the conversation
-
-2. **Provide Your Income Details**
-   The chatbot will ask about your income sources. Be ready with information about:
-   - Salary income
-   - Business/Professional income
-   - Rental income
-   - Capital gains
-   - Other sources of income
-
-3. **ITR Form Recommendations**
-   Based on your inputs, the chatbot will recommend the appropriate ITR form:
-
-   - **ITR-1 (Sahaj)**: For individuals with:
-     - Salary income
-     - One house property
-     - Interest income
-     - Total income up to ₹50 lakhs
-
-   - **ITR-2**: For individuals with:
-     - Salary income
-     - Capital gains
-     - More than one house property
-     - Foreign income/assets
-
-   - **ITR-3**: For individuals with:
-     - Business/Professional income
-     - Salary and other sources
-
-   - **ITR-4 (Sugam)**: For individuals with:
-     - Presumptive business income
-     - Professional income under section 44ADA
-
-4. **Additional Features**
-   - Get tax saving suggestions
-   - Download the recommended ITR form
-   - Calculate estimated tax liability
-
-## Example Conversation
-
-User: "Hi"
-Bot: "Hello! I can help you determine which ITR form is suitable for you. Could you tell me about your sources of income?"
-
-User: "I have salary income and rental income from one house property"
-Bot: "Could you specify your total annual income?"
-
-User: "My salary is 8 lakhs and rental income is 2 lakhs"
-Bot: "Based on your income sources and total income of ₹10 lakhs, ITR-1 (Sahaj) would be the appropriate form for you..."
-
-## Privacy Note
-- The chatbot doesn't store any personal information
-- All calculations are done in real-time
-- No data is saved after the session ends
->>>>>>> f4f2613e7edeac780c60a72508f2dc472ecc3452

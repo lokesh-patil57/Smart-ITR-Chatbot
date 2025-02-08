@@ -30,6 +30,27 @@ const forms = [
         description: 'For presumptive business income',
         filename: 'ITR4.pdf',
         path: '/forms/ITR4.pdf'
+    },
+    {
+        id: 'itr5',
+        name: 'ITR-5',
+        description: 'For firms, LLPs, and associations of persons (AOPs)',
+        filename: 'ITR5.pdf',
+        path: '/forms/ITR5.pdf'
+    },
+    {
+        id: 'itr6',
+        name: 'ITR-6',
+        description: 'For companies other than those claiming exemption under section 11',
+        filename: 'ITR6.pdf',
+        path: '/forms/ITR6.pdf'
+    },
+    {
+        id: 'itr7',
+        name: 'ITR-7',
+        description: 'For charitable/religious trusts, political parties, research institutions',
+        filename: 'ITR7.pdf',
+        path: '/forms/ITR7.pdf'
     }
 ];
 
