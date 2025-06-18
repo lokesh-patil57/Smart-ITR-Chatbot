@@ -45,8 +45,8 @@ New-Item .env
 
 Add the following content to .env:
 ```env
-MONGODB_URI=mongodb+srv://lucky577:Lok22rk+@cluster0.8effy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=myTaxAssistant2024SecureKey!@#$
+MONGODB_URI=your-mongodb-uri
+JWT_SECRET=your-jwt-secret
 PORT=5000
 ```
 
